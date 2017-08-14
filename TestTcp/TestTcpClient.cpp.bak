@@ -1,0 +1,160 @@
+#include <stdio.h>
+#include <errno.h>
+#include <string.h>
+#include <time.h>
+
+#include "../EpcTofClient/EpcTofClient.h"
+
+#pragma comment(lib, "../Library/Win32/Debug_Static/Utility.lib")
+#pragma comment(lib, "../Library/Win32/Debug_Static/Network.lib")
+#pragma comment(lib, "../Library/Win32/Debug_Static/EpcTofClient.lib")
+
+#define SAVE_DATA
+
+void getEpcData(EpcTofClient *epcClient,char *cpszType, char *filename)
+{
+	FILE* fp = NULL;
+#ifdef SAVE_DATA
+	// 0. store data
+	if (filename != NULL) {
+		fp = fopen(filename, "wb");
+		if (fp == NULL) {
+			printf("failed to create file %s\n", filename);
+			return;
+		}
+	}
+#endif
+
+	// b1. send command
+	char szCmd[256];
+	sprintf(szCmd, "%s\n", cpszType);	
+	epcClient->send(strlen(szCmd), (unsigned char *)szCmd, 30*1000);
+	// 2. receive response
+	char szBuf[153600];			
+	int nTotalLen = 0;
+	do {
+		unsigned long ulLen = 153600;
+		if (epcClient->receive(ulLen, (unsigned char *)szBuf, 30*1000)) {
+#ifdef SAVE_DATA
+			if(fp != NULL)
+				fwrite(szBuf, sizeof(char), ulLen, fp);
+#endif
+			nTotalLen += ulLen;
+			//printf("ecpData: len=%d\n", ulLen);
+		}				
+	} while (!epcClient->isBroken());
+	printf("epc %s=%d\n", cpszType, nTotalLen);
+
+#ifdef SAVE_DATA
+	if (fp != NULL) {
+		fclose(fp);
+		fp = NULL;
+	}
+#endif
+}
+
+void testEpcClient(const char *cpszHost, char* port)
+{
+	EpcTofClient *epcClient = new EpcTofClient();
+	if (epcClient == NULL) return ;
+	
+	if (epcClient->init((char*)cpszHost, port)) {
+#if 1
+		int minAmp = epcClient->getMinAmplitude();
+		printf("epc minAmp = %d\n", minAmp);
+
+		int nVersion = epcClient->getVersion();
+		printf("epc version = %d\n", nVersion);
+
+		minAmp = epcClient->getMinAmplitude();
+		printf("epc minAmp = %d\n", minAmp);
+
+		nVersion = epcClient->getPartVersion();
+		printf("epc getPartVersion = %d\n", nVersion);
+
+		nVersion = epcClient->getIcVersion();
+		printf("epc getIcVersion = %d\n", nVersion);
+
+		int nTemp = epcClient->getAveragedTemperature();
+		printf("epc getAveragedTemperature = %d\n", nTemp);
+
+		int nOffset = epcClient->getOffset();
+		printf("epc getOffset = %d\n", nOffset);
+
+		minAmp = epcClient->getMinAmplitude();
+		printf("epc minAmp = %d\n", minAmp);
+
+		//int rc = epcClient->loadConfig(0);
+		//printf("epc loadConfig(0) = %d\n", rc);
+
+		int rc = epcClient->loadConfig(1);
+		printf("epc loadConfig(1) = %d\n", rc);
+
+		minAmp = epcClient->getMinAmplitude();
+		printf("epc minAmp = %d\n", minAmp);
+
+		minAmp = 100;
+		epcClient->setMinAmplitude(minAmp);
+		printf("set epc minAmp = %d\n", minAmp);
+
+		minAmp = epcClient->getMinAmplitude();
+		printf("epc minAmp = %d\n", minAmp);
+
+
+#endif
+		// test raw command
+		time_t start = time(NULL);
+		int nTotalFrames = 1;
+		for (int i = 0; i < nTotalFrames; i++) {
+			// 1. send command			
+			getEpcData(epcClient, "getDistanceSorted", "epc_getDistanceSorted_100.bin");			
+		}
+		printf("%d frames = %ds\n", nTotalFrames, time(NULL)-start);
+#if 0
+		getEpcData(epcClient, "getAmplitudeSorted", "epc_getAmplitudeSorted_1.bin");//
+		getEpcData(epcClient, "getBWSorted", "epc_getBWSorted_1.bin");
+
+		getEpcData(epcClient, "getDCSSorted", "epc_getDCSSorted_1.bin");
+		getEpcData(epcClient, "getDistanceSorted", "epc_getDistanceSorted_1.bin");
+		getEpcData(epcClient, "getDistanceAndAmplitudeSorted", "epc_getDistanceAndAmplitudeSorted_1.bin");
+		getEpcData(epcClient, "getBW", "epc_getBW_1.bin");
+		getEpcData(epcClient, "getDCS", "epc_getDCS_1.bin");
+		getEpcData(epcClient, "getDistance", "epc_getDistance_1.bin");
+		getEpcData(epcClient, "getAmplitude", "epc_getAmplitude_1.bin");
+		getEpcData(epcClient, "getDistanceAndAmplitude", "epc_getDistanceAndAmplitude_1.bin");
+
+		getEpcData(epcClient, "getDistanceSorted", NULL);
+#endif
+		epcClient->close();
+
+	}
+
+	delete epcClient;	
+}
+
+int main(int argc, char **argv)
+{
+	/*
+	if (argc < 3) {
+		printf("Please input target server and port\n");
+		return -1;
+	}
+	*/
+
+	InitPlatform(0);
+
+	char* strServer = "192.168.7.2";
+	char* strPort = "50660";
+	
+	//printf("Server = %s\n", strServer);
+	//printf("Port   = %s\n", strPort);
+//
+	testEpcClient(strServer, strPort);	
+
+	ShutdownPlatform();
+	getchar();
+
+	return 0;
+}
+
+

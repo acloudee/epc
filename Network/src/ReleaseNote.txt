@@ -1,0 +1,129 @@
+[2.0.3-20030804- use select()]
+(add)use select() for time out detection under Vxworks,in SocketConnection.cpp; RawReceive,Receive,Send
+
+
+[2.0.3-20030730- Undo Set Priroity -1 for _service]
+
+[2.0.3-20030729- Set Priroity -1 for _service]
+Set Priroity -1 for _service before it stops
+
+[2.0.3-20030625- Multicast group]
+(add) broadcast support to UDP socket init()
+(modify) support multiple multicast groups simultaneously by JoinGroup() & LeaveGroup();
+
+[2.0.3-20030621- Multicast group]
+(modify) Block out the use of UDP from SockHead.h, use UdpSocket.h instead
+(Add) Support UDP Tx and Rx of IP multicast group into UdpSocket.h
+	multicast group address: 224.x.x.x(E0.x.x.x) - 239.x.x.x(EF.x.x.x)
+
+[2.0.2-20030617- Add new interface:Ping]
+
+[2.0.2-20030609- Add new interface:IsReadable]
+virtual bool IsReadable(DWORD dwTimeout) = 0;//in millisecond time out
+can tell if there is data to recevie;
+if false;to invoke IsBroken to can tell if the sock failed
+ 
+
+[2.0.2-20030603- Endian of IP and Port]
+0. Force the calling of SockInit()/SockClear() on Win32
+1. Merge redundant and duplicated code
+2. All IN/OUT IP are in NETWORK byte order
+3. All IN/OUT Port are in HOST byte order.
+4. Remvoe SockFunc.cpp from project
+
+[2.0.1-20030528:add colon]
+;//assert(false);//in SockConnection.cpp	
+
+[2.0.1-20030528:HeadFilePosition]
+Note:if you want include UdpSocket.h or sockhead.h 
+in you file,you MUST include them prior to other head file,
+otherwise there will be conflict with other files.
+for exampel:
+#include "UdpSocket.h"
+
+#include "MyOtherHead.h"
+
+
+
+[2.0.1-20030528:KeepAlive]
+enable sending TCP keep-alive ACK for both TCP client and server by setsockopt
+
+[2.0.1-20030528:Tos,select]
+1.virtual bool SetTos(unsigned char chTos/*in*/) = 0;
+meaning of fields:
+0 1 2 3 4 5 6 7
++-----+-----+-----+-----+-----+-----+-----+-----+
+| | | |
+| PRECEDENCE | TOS | MBZ |
+| | | |
++-----+-----+-----+-----+-----+-----+-----+-----+
+
+Bits 0-2: Precedence.
+Bit 3: 0 = Normal Delay, 1 = Low Delay.
+Bits 4: 0 = Normal Throughput, 1 = High Throughput.
+Bits 5: 0 = Normal Relibility, 1 = High Relibility.
+Bit 6-7: Reserved for Future Use.
+
+Precedence
+111 - Network Control
+110 - Internetwork Control
+101 - CRITIC/ECP
+100 - Flash Override
+011 - Flash
+010 - Immediate
+001 - Priority
+000 - Routine
+
++-----+-----+-----+-----+-----+-----+-----+-----+
+| | | | | | |
+| PRECEDENCE | D | T | R | 0 | 0 |
+| | | | | | |
++-----+-----+-----+-----+-----+-----+-----+-----+
+rtp:0xb0;rtcp:0x64
+
+
+2.virtual	int Send(PCSTR cpszDestAddr, 
+				unsigned short ushDestPort,
+				DWORD dwLen, LPBYTE pData,
+				 char chTos=0,				
+				DWORD dwTimeoutsMs=3*1000) = 0;
+// char chTos=0;	// not used,if you want to set tos,use SetTos instead;	type of service, highest, 0-7 lowest
+
+3.
+select function:in Receive member function
+prototype:int select (int nfds, fd_set *readfds, 
+fd_set *writefds, 
+fd_set *exceptfds, 
+const struct timeval *timeout);
+the first parameter is ignored on Windows,
+and should be set to either the maximum file descriptor
+value in use plus one, or simply to FD_SETSIZE on Vxworks.
+
+
+[2.0.1-20030416:SetTos]
+(bug):SetTos does not take effect on Windows 2000 by default;
+	  if user wants to use it correctly on Windows 2000,please add a new key named DisableUserTOSSetting with value 0 
+	  under following location:		
+	  HKEY_LOCAL_ MACHINE on Local Machine\System\CurrentControlSet\Services\Tcpip\Parameters\;
+	  
+	  for more details,please refer to:	
+	  http://support.microsoft.com:80/support/kb/articles/Q248/6/11.ASP&NoWebContent=1
+
+	  SetTos works well on VxWorks.
+
+[2.0.1-20030409:Thread]
+(modify) Use CRunnable instead of taskSpawn or BeginThread or Sleep/Delay
+(bug) SocketServer => taskSpawn should pair with a taskDelete
+!!! Note !!!: dead TCP client connections clean up on CSocketServer::_Service 
+				 may cause problem on bad behaviour client !!!
+				it would be safer to do it on another thread.
+
+[2.0.1-20030408]
+
+[Preprocessor Definiton]
+
+	1. _LOGGER_		Turn on/off log framework
+	2. CURRENT_MODULE=NETWORK_MODULE_ID
+	3.DEBUG_LEVEL=LogDetail
+	4._LOG_MEMROY_USAGE_
+ 

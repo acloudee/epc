@@ -1,0 +1,112 @@
+﻿Build started 2017/8/14 3:17:44.
+     1>Project "D:\work\EPC\EPC_20170811\Network\src\Network.vcxproj" on node 3 (Rebuild target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D CURRENT_MODULE=NETWORK_MODULE_ID /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Debug/" /Fd".\Debug/vc120.pdb" /FR".\Debug\\" /Gd /TP /analyze- /errorReport:prompt ITUdpSocket.cpp SocketClient.cpp SocketConnection.cpp SocketRendezvous.cpp SocketServer.cpp sockhead.cpp SockUtil.cpp UdpSocket.cpp
+         ITUdpSocket.cpp
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\errno.h(71): warning C4005: 'ENAMETOOLONG' : macro redefinition
+                 d:\work\epc\epc_20170811\network\src\winerrno.h(35) : see previous definition of 'ENAMETOOLONG'
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\errno.h(74): warning C4005: 'ENOTEMPTY' : macro redefinition
+                 d:\work\epc\epc_20170811\network\src\winerrno.h(42) : see previous definition of 'ENOTEMPTY'
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\errno.h(92): warning C4005: 'EADDRINUSE' : macro redefinition
+                 d:\work\epc\epc_20170811\network\src\winerrno.h(18) : see previous definition of 'EADDRINUSE'
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\errno.h(93): warning C4005: 'EADDRNOTAVAIL' : macro redefinition
+                 d:\work\epc\epc_20170811\network\src\winerrno.h(19) : see previous definition of 'EADDRNOTAVAIL'
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\errno.h(94): warning C4005: 'EAFNOSUPPORT' : macro redefinition
+                 d:\work\epc\epc_20170811\network\src\winerrno.h(17) : see previous definition of 'EAFNOSUPPORT'
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\errno.h(95): warning C4005: 'EALREADY' : macro redefinition
+                 d:\work\epc\epc_20170811\network\src\winerrno.h(7) : see previous definition of 'EALREADY'
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\errno.h(98): warning C4005: 'ECONNABORTED' : macro redefinition
+                 d:\work\epc\epc_20170811\network\src\winerrno.h(23) : see previous definition of 'ECONNABORTED'
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\errno.h(99): warning C4005: 'ECONNREFUSED' : macro redefinition
+                 d:\work\epc\epc_20170811\network\src\winerrno.h(31) : see previous definition of 'ECONNREFUSED'
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\errno.h(100): warning C4005: 'ECONNRESET' : macro redefinition
+                 d:\work\epc\epc_20170811\network\src\winerrno.h(24) : see previous definition of 'ECONNRESET'
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\errno.h(101): warning C4005: 'EDESTADDRREQ' : macro redefinition
+                 d:\work\epc\epc_20170811\network\src\winerrno.h(9) : see previous definition of 'EDESTADDRREQ'
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\errno.h(102): warning C4005: 'EHOSTUNREACH' : macro redefinition
+                 d:\work\epc\epc_20170811\network\src\winerrno.h(39) : see previous definition of 'EHOSTUNREACH'
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\errno.h(104): warning C4005: 'EINPROGRESS' : macro redefinition
+                 d:\work\epc\epc_20170811\network\src\winerrno.h(6) : see previous definition of 'EINPROGRESS'
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\errno.h(105): warning C4005: 'EISCONN' : macro redefinition
+                 d:\work\epc\epc_20170811\network\src\winerrno.h(26) : see previous definition of 'EISCONN'
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\errno.h(106): warning C4005: 'ELOOP' : macro redefinition
+                 d:\work\epc\epc_20170811\network\src\winerrno.h(32) : see previous definition of 'ELOOP'
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\errno.h(107): warning C4005: 'EMSGSIZE' : macro redefinition
+                 d:\work\epc\epc_20170811\network\src\winerrno.h(10) : see previous definition of 'EMSGSIZE'
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\errno.h(108): warning C4005: 'ENETDOWN' : macro redefinition
+                 d:\work\epc\epc_20170811\network\src\winerrno.h(20) : see previous definition of 'ENETDOWN'
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\errno.h(109): warning C4005: 'ENETRESET' : macro redefinition
+                 d:\work\epc\epc_20170811\network\src\winerrno.h(22) : see previous definition of 'ENETRESET'
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\errno.h(110): warning C4005: 'ENETUNREACH' : macro redefinition
+                 d:\work\epc\epc_20170811\network\src\winerrno.h(21) : see previous definition of 'ENETUNREACH'
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\errno.h(111): warning C4005: 'ENOBUFS' : macro redefinition
+                 d:\work\epc\epc_20170811\network\src\winerrno.h(25) : see previous definition of 'ENOBUFS'
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\errno.h(115): warning C4005: 'ENOPROTOOPT' : macro redefinition
+                 d:\work\epc\epc_20170811\network\src\winerrno.h(12) : see previous definition of 'ENOPROTOOPT'
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\errno.h(118): warning C4005: 'ENOTCONN' : macro redefinition
+                 d:\work\epc\epc_20170811\network\src\winerrno.h(27) : see previous definition of 'ENOTCONN'
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\errno.h(120): warning C4005: 'ENOTSOCK' : macro redefinition
+                 d:\work\epc\epc_20170811\network\src\winerrno.h(8) : see previous definition of 'ENOTSOCK'
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\errno.h(122): warning C4005: 'EOPNOTSUPP' : macro redefinition
+                 d:\work\epc\epc_20170811\network\src\winerrno.h(15) : see previous definition of 'EOPNOTSUPP'
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\errno.h(127): warning C4005: 'EPROTONOSUPPORT' : macro redefinition
+                 d:\work\epc\epc_20170811\network\src\winerrno.h(13) : see previous definition of 'EPROTONOSUPPORT'
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\errno.h(128): warning C4005: 'EPROTOTYPE' : macro redefinition
+                 d:\work\epc\epc_20170811\network\src\winerrno.h(11) : see previous definition of 'EPROTOTYPE'
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\errno.h(130): warning C4005: 'ETIMEDOUT' : macro redefinition
+                 d:\work\epc\epc_20170811\network\src\winerrno.h(30) : see previous definition of 'ETIMEDOUT'
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\errno.h(132): warning C4005: 'EWOULDBLOCK' : macro redefinition
+                 d:\work\epc\epc_20170811\network\src\winerrno.h(5) : see previous definition of 'EWOULDBLOCK'
+     1>d:\work\epc\epc_20170811\network\src\itudpsocket.cpp(80): warning C4390: ';' : empty controlled statement found; is this the intent?
+     1>d:\work\epc\epc_20170811\network\src\itudpsocket.cpp(271): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
+         SocketClient.cpp
+     1>d:\work\epc\epc_20170811\network\src\socketclient.cpp(53): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'sprintf'
+     1>d:\work\epc\epc_20170811\network\src\socketclient.cpp(68): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>d:\work\epc\epc_20170811\network\src\socketclient.cpp(70): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
+         SocketConnection.cpp
+     1>d:\work\epc\epc_20170811\network\src\socketconnection.cpp(148): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'sprintf'
+         SocketRendezvous.cpp
+         SocketServer.cpp
+     1>d:\work\epc\epc_20170811\network\src\socketserver.cpp(73): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(195) : see declaration of 'strncpy'
+     1>d:\work\epc\epc_20170811\network\src\socketserver.cpp(130): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'sprintf'
+     1>d:\work\epc\epc_20170811\network\src\socketserver.cpp(141): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>d:\work\epc\epc_20170811\network\src\socketserver.cpp(159): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'sprintf'
+     1>d:\work\epc\epc_20170811\network\src\socketserver.cpp(242): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'sprintf'
+         sockhead.cpp
+         SockUtil.cpp
+     1>d:\work\epc\epc_20170811\network\src\sockutil.cpp(13): warning C4996: 'strerror': This function or variable may be unsafe. Consider using strerror_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(168) : see declaration of 'strerror'
+     1>d:\work\epc\epc_20170811\network\src\sockutil.cpp(49): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>d:\work\epc\epc_20170811\network\src\sockutil.cpp(55): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'sprintf'
+         UdpSocket.cpp
+         Generating Code...
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(1354,5): warning MSB8012: TargetPath(D:\work\EPC\EPC_20170811\Network\src\.\Debug\Network.lib) does not match the Library's OutputFile property value (D:\work\EPC\EPC_20170811\Library\Win32\Debug_Static\Network.lib). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Lib.OutputFile).
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:"../../Library/Win32/Debug_Static/Network.lib" /NOLOGO .\Debug/ITUdpSocket.obj
+         .\Debug/SocketClient.obj
+         .\Debug/SocketConnection.obj
+         .\Debug/SocketRendezvous.obj
+         .\Debug/SocketServer.obj
+         .\Debug/sockhead.obj
+         .\Debug/SockUtil.obj
+         .\Debug/UdpSocket.obj
+         Network.vcxproj -> D:\work\EPC\EPC_20170811\Network\src\.\Debug\Network.lib
+       BscMake:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\bscmake.exe /nologo /o".\Debug\Network.bsc" .\Debug\ITUdpSocket.sbr .\Debug\SocketClient.sbr .\Debug\SocketConnection.sbr .\Debug\SocketRendezvous.sbr .\Debug\SocketServer.sbr .\Debug\sockhead.sbr .\Debug\SockUtil.sbr .\Debug\UdpSocket.sbr
+     1>Done Building Project "D:\work\EPC\EPC_20170811\Network\src\Network.vcxproj" (Rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:06.83

@@ -1,0 +1,19 @@
+﻿Build started 2017/8/14 3:17:40.
+     1>Project "D:\work\EPC\EPC_20170811\Utility\Utility.vcxproj" on node 2 (Rebuild target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Utility.cpp
+         Utility.cpp
+     1>d:\work\epc\epc_20170811\utility\utility.cpp(15): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+     1>d:\work\epc\epc_20170811\utility\utility.cpp(15): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(304) : see declaration of 'sscanf'
+     1>d:\work\epc\epc_20170811\utility\utility.cpp(21): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(304) : see declaration of 'sscanf'
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(1354,5): warning MSB8012: TargetPath(D:\work\EPC\EPC_20170811\Debug\Utility.lib) does not match the Library's OutputFile property value (D:\work\EPC\EPC_20170811\Library\Win32\Debug_Static\Utility.lib). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Lib.OutputFile).
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:"../Library/Win32/Debug_Static/Utility.lib" /NOLOGO Debug\Utility.obj
+         Utility.vcxproj -> D:\work\EPC\EPC_20170811\Debug\Utility.lib
+     1>Done Building Project "D:\work\EPC\EPC_20170811\Utility\Utility.vcxproj" (Rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.68

@@ -1,0 +1,25 @@
+﻿Build started 2017/8/11 4:24:49.
+     1>Project "D:\work\EPC\EPC_20170725\TestTcp\TestTcp.vcxproj" on node 2 (Rebuild target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /Zi /nologo /W3 /WX- /Od /D WIN32 /D _DEBUG /D _WIN32 /D _CONSOLE /D _DEBUG_LOGDIR /D _NO_CFGMGR_ /D _USE_NS_2 /D _VC80_UPGRADE=0x0710 /D _MBCS /Gm- /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Debug_Static/" /Fd".\Debug_Static/vc120.pdb" /Gd /TP /errorReport:prompt TestTcpClient.cpp
+         TestTcpClient.cpp
+     1>TestTcpClient.cpp(18): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(211) : see declaration of 'fopen'
+     1>TestTcpClient.cpp(27): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>TestTcpClient.cpp(28): warning C4267: 'argument' : conversion from 'size_t' to 'unsigned long', possible loss of data
+     1>TestTcpClient.cpp(59): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(211) : see declaration of 'fopen'
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(1186,5): warning MSB8012: TargetPath(D:\work\EPC\EPC_20170725\x64\Debug\TestTcp.exe) does not match the Linker's OutputFile property value (D:\work\EPC\EPC_20170725\TestTcp\Debug_Static\TestTcp.exe). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:".\Debug_Static/TestTcp.exe" /INCREMENTAL:NO /NOLOGO odbc32.lib odbccp32.lib ws2_32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\work\EPC\EPC_20170725\x64\Debug\TestTcp.pdb" /ASSEMBLYDEBUG /TLBID:1 /DYNAMICBASE:NO /IMPLIB:"D:\work\EPC\EPC_20170725\x64\Debug\TestTcp.lib" /MACHINE:X64 .\Debug_Static/TestTcpClient.obj
+         D:\work\EPC\EPC_20170725\Library\Win32\Debug_Static\EpcTofClient.lib
+     1>EpcTofClient.lib(EpcTofClient.obj) : error LNK2019: unresolved external symbol "public: static class CCTSocketClient * __cdecl CCTSocketClient::_NewInstance(void)" (?_NewInstance@CCTSocketClient@@SAPEAV1@XZ) referenced in function "public: bool __cdecl EpcTofClient::init(char *,int)" (?init@EpcTofClient@@QEAA_NPEADH@Z)
+     1>EpcTofClient.lib(EpcTofClient.obj) : error LNK2019: unresolved external symbol "public: static bool __cdecl CInteger::_IsNumber(char const *,int)" (?_IsNumber@CInteger@@SA_NPEBDH@Z) referenced in function "public: bool __cdecl EpcTofClient::init(char *,char *)" (?init@EpcTofClient@@QEAA_NPEAD0@Z)
+     1>EpcTofClient.lib(EpcTofClient.obj) : error LNK2019: unresolved external symbol "public: static int __cdecl CInteger::_DecodeInt(char const *)" (?_DecodeInt@CInteger@@SAHPEBD@Z) referenced in function "public: bool __cdecl EpcTofClient::init(char *,char *)" (?init@EpcTofClient@@QEAA_NPEAD0@Z)
+     1>.\Debug_Static/TestTcp.exe : fatal error LNK1120: 3 unresolved externals
+     1>Done Building Project "D:\work\EPC\EPC_20170725\TestTcp\TestTcp.vcxproj" (Rebuild target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.44
