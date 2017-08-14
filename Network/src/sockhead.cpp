@@ -475,7 +475,8 @@ CCTSocketContext::~CCTSocketContext()
 
 CCTSocketServer* CCTSocketServer::_NewInstance(LPCSTR cpszServiceName)
 {
-	return (CCTSocketServer*)new CSocketServer(cpszServiceName);
+	return NULL;
+	//(CCTSocketServer*)new CSocketServer(cpszServiceName);
 }
 
 CCTSocketClient* CCTSocketClient::_NewInstance()

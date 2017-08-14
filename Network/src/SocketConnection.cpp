@@ -111,12 +111,14 @@ void CSocketConnection::Init(SOCKET s, struct sockaddr_in	addrIn)
 void CSocketConnection::Close()
 {
 	if (m_sk != INVALID_SOCKET) {
+		/*
 		if (m_pSocketRendezvous) {
 			m_pSocketRendezvous->Remove(m_sk); // has been closed by CSocketRendezvous::Remove
 			m_pSocketRendezvous->ReleaseReference();
 			m_pSocketRendezvous = NULL;	
 		}
 		else 
+		*/
 #ifdef WIN32
 			closesocket(m_sk);
 #elif defined(_LINUX_)

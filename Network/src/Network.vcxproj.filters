@@ -20,12 +20,6 @@
     <ClCompile Include="SocketConnection.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SocketRendezvous.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SocketServer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="sockhead.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

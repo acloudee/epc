@@ -1,45 +1,14 @@
-﻿Build started 2017/8/14 3:17:51.
-     1>Project "D:\work\EPC\EPC_20170811\TestTcp\TestTcp.vcxproj" on node 2 (Rebuild target(s)).
-     1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WIN32 /D _CONSOLE /D _DEBUG_LOGDIR /D _NO_CFGMGR_ /D _USE_NS_2 /D _VC80_UPGRADE=0x0710 /D _MBCS /Gm- /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Debug_Static/" /Fd".\Debug_Static/vc120.pdb" /Gd /TP /analyze- /errorReport:prompt TestTcpClient.cpp
-         TestTcpClient.cpp
-     1>TestTcpClient.cpp(18): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(211) : see declaration of 'fopen'
-     1>TestTcpClient.cpp(27): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
-     1>TestTcpClient.cpp(59): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(211) : see declaration of 'fopen'
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:".\Debug_Static/TestTcp.exe" /INCREMENTAL:NO /NOLOGO odbc32.lib odbccp32.lib ws2_32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /NODEFAULTLIB:LIBCMTD.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:".\Debug_Static\TestTcp.pdb" /ASSEMBLYDEBUG /TLBID:1 /DYNAMICBASE:NO /IMPLIB:".\Debug_Static\TestTcp.lib" /MACHINE:X86 /SAFESEH .\Debug_Static/TestTcpClient.obj
-         D:\work\EPC\EPC_20170811\Library\Win32\Debug_Static\EpcTofClient.lib
-         D:\work\EPC\EPC_20170811\Library\Win32\Debug_Static\Network.lib
+﻿Build started 2017/8/14 23:32:10.
+     1>Project "D:\epc\TestTcp\TestTcp.vcxproj" on node 2 (Build target(s)).
+     1>Link:
+         C:\Program Files\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:".\Debug_Static/TestTcp.exe" /INCREMENTAL:NO /NOLOGO odbc32.lib odbccp32.lib ws2_32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /NODEFAULTLIB:LIBCMTD.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:".\Debug_Static\TestTcp.pdb" /ASSEMBLYDEBUG /TLBID:1 /DYNAMICBASE:NO /IMPLIB:".\Debug_Static\TestTcp.lib" /MACHINE:X86 /SAFESEH .\Debug_Static/TestTcpClient.obj
+         D:\epc\Library\Win32\Debug_Static\EpcTofClient.lib
+         D:\epc\Library\Win32\Debug_Static\Network.lib
      1>EpcTofClient.lib(EpcTofClient.obj) : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
-     1>Network.lib(SocketServer.obj) : error LNK2019: unresolved external symbol "public: static bool __cdecl CThread::Delay(int)" (?Delay@CThread@@SA_NH@Z) referenced in function "public: virtual void __thiscall CSocketServer::Close(void)" (?Close@CSocketServer@@UAEXXZ)
-     1>Network.lib(SocketServer.obj) : error LNK2019: unresolved external symbol "public: static class CRunnable * __cdecl CRunnable::_Run(void (__cdecl*)(void *),void *,int,char const *,int,int,int)" (?_Run@CRunnable@@SAPAV1@P6AXPAX@Z0HPBDHHH@Z) referenced in function "public: virtual bool __thiscall CSocketServer::Service(void (__cdecl*)(class CCTSocketContext *),void *,int,int)" (?Service@CSocketServer@@UAE_NP6AXPAVCCTSocketContext@@@ZPAXHH@Z)
-     1>Network.lib(SocketServer.obj) : error LNK2019: unresolved external symbol "public: __thiscall CRunnable::CRunnable(void)" (??0CRunnable@@QAE@XZ) referenced in function "protected: static void __cdecl CSocketServer::_Service(void *)" (?_Service@CSocketServer@@KAXPAX@Z)
-     1>Network.lib(SocketServer.obj) : error LNK2019: unresolved external symbol "public: bool __thiscall CRunnable::Start(char const *,int,int,int,int)" (?Start@CRunnable@@QAE_NPBDHHHH@Z) referenced in function "protected: static void __cdecl CSocketServer::_Service(void *)" (?_Service@CSocketServer@@KAXPAX@Z)
-     1>Network.lib(SocketServer.obj) : error LNK2019: unresolved external symbol "public: void __thiscall CRunnable::Stop(void)" (?Stop@CRunnable@@QAEXXZ) referenced in function "public: virtual void __thiscall CSocketServer::Close(void)" (?Close@CSocketServer@@UAEXXZ)
-     1>Network.lib(SocketServer.obj) : error LNK2019: unresolved external symbol "public: __thiscall CQueue::CQueue(bool)" (??0CQueue@@QAE@_N@Z) referenced in function "public: __thiscall CSocketServer::CSocketServer(char const *)" (??0CSocketServer@@QAE@PBD@Z)
-     1>Network.lib(SocketServer.obj) : error LNK2019: unresolved external symbol "public: virtual __thiscall CQueue::~CQueue(void)" (??1CQueue@@UAE@XZ) referenced in function "public: virtual __thiscall CSocketServer::~CSocketServer(void)" (??1CSocketServer@@UAE@XZ)
-     1>Network.lib(SocketServer.obj) : error LNK2019: unresolved external symbol "public: bool __thiscall CQueue::PushData(void *,bool)" (?PushData@CQueue@@QAE_NPAX_N@Z) referenced in function "public: virtual void __thiscall CSocketContext::Close(void)" (?Close@CSocketContext@@UAEXXZ)
-     1>Network.lib(SocketServer.obj) : error LNK2019: unresolved external symbol "public: void * __thiscall CQueue::PopData(int,bool)" (?PopData@CQueue@@QAEPAXH_N@Z) referenced in function "public: virtual void __thiscall CSocketServer::Close(void)" (?Close@CSocketServer@@UAEXXZ)
-     1>Network.lib(SocketRendezvous.obj) : error LNK2019: unresolved external symbol "public: __thiscall CMutex::CMutex(void)" (??0CMutex@@QAE@XZ) referenced in function "public: __thiscall CSocketRendezvous::CSocketRendezvous(void)" (??0CSocketRendezvous@@QAE@XZ)
-     1>Network.lib(SocketRendezvous.obj) : error LNK2019: unresolved external symbol "public: virtual __thiscall CMutex::~CMutex(void)" (??1CMutex@@UAE@XZ) referenced in function __unwindfunclet$??0CSocketRendezvous@@QAE@XZ$0
-     1>Network.lib(SocketRendezvous.obj) : error LNK2019: unresolved external symbol "public: bool __thiscall CMutex::Create(bool,bool)" (?Create@CMutex@@QAE_N_N0@Z) referenced in function "public: __thiscall CSocketRendezvous::CSocketRendezvous(void)" (??0CSocketRendezvous@@QAE@XZ)
-     1>Network.lib(SocketRendezvous.obj) : error LNK2019: unresolved external symbol "public: enum TAKE_STATUS_CODE __thiscall CMutex::Take(int)" (?Take@CMutex@@QAE?AW4TAKE_STATUS_CODE@@H@Z) referenced in function "public: bool __thiscall CSocketRendezvous::Add(unsigned int)" (?Add@CSocketRendezvous@@QAE_NI@Z)
-     1>Network.lib(SocketRendezvous.obj) : error LNK2019: unresolved external symbol "public: bool __thiscall CMutex::Give(void)" (?Give@CMutex@@QAE_NXZ) referenced in function "public: bool __thiscall CSocketRendezvous::Add(unsigned int)" (?Add@CSocketRendezvous@@QAE_NI@Z)
-     1>Network.lib(SocketRendezvous.obj) : error LNK2019: unresolved external symbol "public: bool __thiscall CMutex::Delete(void)" (?Delete@CMutex@@QAE_NXZ) referenced in function "public: virtual __thiscall CSocketRendezvous::~CSocketRendezvous(void)" (??1CSocketRendezvous@@UAE@XZ)
-     1>Network.lib(SocketRendezvous.obj) : error LNK2019: unresolved external symbol "public: __thiscall CHashMap::CHashMap(int,float)" (??0CHashMap@@QAE@HM@Z) referenced in function "public: __thiscall CSocketRendezvous::CSocketRendezvous(void)" (??0CSocketRendezvous@@QAE@XZ)
-     1>Network.lib(SocketRendezvous.obj) : error LNK2019: unresolved external symbol "public: virtual __thiscall CHashMap::~CHashMap(void)" (??1CHashMap@@UAE@XZ) referenced in function __unwindfunclet$??0CSocketRendezvous@@QAE@XZ$2
-     1>Network.lib(SocketRendezvous.obj) : error LNK2019: unresolved external symbol "public: void * __thiscall CHashMap::Get(void *)" (?Get@CHashMap@@QAEPAXPAX@Z) referenced in function "public: bool __thiscall CSocketRendezvous::Remove(unsigned int)" (?Remove@CSocketRendezvous@@QAE_NI@Z)
-     1>Network.lib(SocketRendezvous.obj) : error LNK2019: unresolved external symbol "public: void * __thiscall CHashMap::Put(void *,void *)" (?Put@CHashMap@@QAEPAXPAX0@Z) referenced in function "public: bool __thiscall CSocketRendezvous::Add(unsigned int)" (?Add@CSocketRendezvous@@QAE_NI@Z)
-     1>Network.lib(SocketRendezvous.obj) : error LNK2019: unresolved external symbol "public: void * __thiscall CHashMap::Remove(void *)" (?Remove@CHashMap@@QAEPAXPAX@Z) referenced in function "public: bool __thiscall CSocketRendezvous::Remove(unsigned int)" (?Remove@CSocketRendezvous@@QAE_NI@Z)
-     1>Network.lib(SocketRendezvous.obj) : error LNK2019: unresolved external symbol "public: void * __thiscall CHashMap::GetStartPosition(void)const " (?GetStartPosition@CHashMap@@QBEPAXXZ) referenced in function "public: void __thiscall CSocketRendezvous::Clear(void)" (?Clear@CSocketRendezvous@@QAEXXZ)
-     1>Network.lib(SocketRendezvous.obj) : error LNK2019: unresolved external symbol "public: void __thiscall CHashMap::GetNextAssoc(void * &,void * &,void * &)" (?GetNextAssoc@CHashMap@@QAEXAAPAX00@Z) referenced in function "public: void __thiscall CSocketRendezvous::Clear(void)" (?Clear@CSocketRendezvous@@QAEXXZ)
-     1>Network.lib(SocketRendezvous.obj) : error LNK2019: unresolved external symbol "public: void __thiscall CHashMap::Clear(void)" (?Clear@CHashMap@@QAEXXZ) referenced in function "public: void __thiscall CSocketRendezvous::Clear(void)" (?Clear@CSocketRendezvous@@QAEXXZ)
-     1>.\Debug_Static/TestTcp.exe : fatal error LNK1120: 23 unresolved externals
-     1>Done Building Project "D:\work\EPC\EPC_20170811\TestTcp\TestTcp.vcxproj" (Rebuild target(s)) -- FAILED.
+     1>Utility.lib(Utility.obj) : warning LNK4204: 'D:\epc\TestTcp\Debug_Static\vc120.pdb' is missing debugging information for referencing module; linking object as if no debug info
+         TestTcp.vcxproj -> D:\epc\TestTcp\.\Debug_Static\TestTcp.exe
+     1>Done Building Project "D:\epc\TestTcp\TestTcp.vcxproj" (Build target(s)).
 
-Build FAILED.
+Build succeeded.
 
-Time Elapsed 00:00:00.34
+Time Elapsed 00:00:00.75
